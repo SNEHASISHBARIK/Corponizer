@@ -1,0 +1,141 @@
+/* 
+  Wise and professional styles for the "Our Services" Section
+  File: /src/Components/Ourservices/OurServices.css
+*/
+
+.our-services-section {
+    padding: 80px 5%;
+    background-color: #f8f9fa; /* A light grey background to separate the section */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.our-services-section .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    color: #212529;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.section-title h1:last-of-type {
+    color: #0056b3; /* A professional blue to match your brand */
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0, 86, 179, 0.25); /* A wise, subtle blue shadow */
+    background-color: #0056b3; /* Change background to primary blue on hover */
+}
+
+.service-card:hover h2,
+.service-card:hover li,
+.service-card:hover li::before {
+    color: #ffffff; /* Change text & icon color to white for contrast */
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* A subtle underline effect for the card title */
+.service-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.service-card:hover h2::after {
+    background-color: #ffffff; /* Change underline to white on hover */
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-card li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Custom checkmark bullet point for the list items */
+.service-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0056b3;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.service-card li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .our-services-section {
+        padding: 60px 5%;
+    }
+
+    .section-title h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h1 {
+        font-size: 2.2rem;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+}

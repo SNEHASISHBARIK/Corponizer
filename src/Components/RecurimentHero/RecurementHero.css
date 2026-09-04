@@ -1,0 +1,221 @@
+/* 
+  Styles for the Recruitment Hero Banner
+  Wisely redesigned for a more dynamic and engaging experience.
+*/
+
+.recruitment-hero {
+  position: relative;
+  height: 65vh; /* Adjusted height */
+  min-height: 450px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.recruitment-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  /* Automatic Ken Burns effect */
+  animation: ken-burns 25s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* The automatic zoom and pan effect */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.1) translate(2%, -1%);
+  }
+  100% {
+    transform: scale(1.25) translate(-2%, 2%);
+  }
+}
+
+.recruitment-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* A more sophisticated gradient to focus the center */
+  background: radial-gradient(circle at center, rgba(10, 20, 30, 0.4) 0%, rgba(10, 20, 30, 0.8) 90%);
+  z-index: -1;
+}
+
+.recruitment-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeInUp 1s 0.2s ease-out backwards;
+}
+
+/* Badge styling */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4CAF50; /* A nice green to signify opportunity */
+  box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+  animation: pulse-dot 2s infinite;
+}
+
+.recruitment-hero-content h1 {
+  font-size: 5rem; /* Slightly larger */
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  letter-spacing: -2px; /* Tighter letter spacing */
+  color: #fff;
+}
+
+.recruitment-hero-content p {
+  font-size: 1.3rem; /* Slightly larger */
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Scroll Down Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s ease-out forwards;
+}
+
+.hero-scroll-indicator span {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scroll-icon-mouse {
+  width: 26px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background-color: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel-animation 2.2s infinite;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+@keyframes scroll-wheel-animation {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  50% {
+    opacity: 0;
+    top: 22px;
+  }
+  100% {
+    opacity: 1;
+    top: 8px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recruitment-hero-content h1 {
+    font-size: 3.8rem;
+  }
+  .recruitment-hero-content p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruitment-hero {
+    height: 60vh;
+  }
+  .recruitment-hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .recruitment-hero-content p {
+    font-size: 1rem;
+  }
+}

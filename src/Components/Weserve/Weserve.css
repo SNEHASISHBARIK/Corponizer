@@ -1,0 +1,159 @@
+/* 
+  Styles for the "We Serve" Section
+  Wisely adjusted for a more professional and balanced look.
+  File: /src/Components/Weserve/Weserve.css
+*/
+
+.weserve-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.weserve-section .main {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Title Container */
+.weserve-title-container {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 60px;
+}
+
+/* Main Title Styling */
+.weserve-title-container h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #1a202c;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -1.5px;
+    font-style: italic;
+}
+
+.weserve-title-container h1:first-of-type {
+    color: #4a5568;
+    font-weight: 700;
+}
+
+.weserve-title-container h1:nth-of-type(2) {
+    color: #0056b3;
+}
+
+/* Left Column: Content Blocks */
+.weserve-section .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.weserve-section .left > div {
+    position: relative; /* For positioning the pseudo-element */
+    padding: 20px;
+    border-left: 4px solid #0056b3;
+    background-color: #f8f9fa;
+    border-radius: 0 8px 8px 0;
+    overflow: hidden; /* To contain the pseudo-element's animation */
+    z-index: 1; /* To ensure content is above the pseudo-element */
+}
+
+/* The blue background that slides in from left to right on hover */
+.weserve-section .left > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #0056b3;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+/* On hover, expand the pseudo-element to fill the card */
+.weserve-section .left > div:hover::before {
+    width: 100%;
+}
+
+.weserve-section .left h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0 0 10px 0;
+    transition: color 0.4s ease-in-out; /* Smooth color transition for text */
+}
+
+.weserve-section .left p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+    transition: color 0.4s ease-in-out; /* Smooth color transition for text */
+}
+
+/* On hover, change the text color to white to contrast with the blue background */
+.weserve-section .left > div:hover h2,
+.weserve-section .left > div:hover p {
+    color: #ffffff;
+}
+
+/* Right Column: Image */
+.weserve-section .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.weserve-section .right img {
+    width: 100%;
+    max-height: 720px; /* Adjusted to fit section height within the 720-1000px range */
+    height: 100%;      /* Allow it to fill its container vertically */
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center; /* Ensure the image is centered */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .weserve-section .main {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .weserve-title-container {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .weserve-title-container h1 {
+        font-size: 3rem;
+    }
+
+    .weserve-section .right {
+        order: -1;
+    }
+}
+
+@media (max-width: 576px) {
+    .weserve-section {
+        padding: 60px 5%;
+    }
+
+    .weserve-title-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .weserve-section .left h2 {
+        font-size: 1.5rem;
+    }
+}

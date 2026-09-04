@@ -1,0 +1,161 @@
+.career-hero-section {
+  position: relative;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  opacity: 0.6;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  padding: 5px;
+}
+
+.search-bar button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #004494;
+}
+
+.popular-jobs-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.popular-jobs-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+  display: none; /* User didn't request a title, so hiding it implicitly or we can leave it */
+}
+
+.popular-jobs-container {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.job-cards-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.job-cards-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  width: max-content;
+  animation: slideMarquee 15s linear infinite;
+  padding-bottom: 10px;
+}
+
+@keyframes slideMarquee {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.job-card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  border: 1px solid #eee;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 15px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  
+  .search-bar button {
+    width: 100%;
+  }
+}

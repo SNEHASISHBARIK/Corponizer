@@ -1,0 +1,102 @@
+.contacthero-container {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.contacthero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.contacthero-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 5%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.contacthero-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.heading-highlight {
+  color: #007bff; /* Primary brand blue */
+}
+
+.contacthero-subtext {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contacthero-container {
+    height: 50vh;
+  }
+  
+  .contacthero-overlay {
+    padding: 2rem;
+  }
+  
+  .contacthero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .contacthero-subtext {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacthero-overlay {
+    padding: 1.5rem;
+  }
+
+  .contacthero-heading {
+    font-size: 2rem;
+  }
+  
+  .contacthero-subtext {
+    font-size: 1rem;
+  }
+}

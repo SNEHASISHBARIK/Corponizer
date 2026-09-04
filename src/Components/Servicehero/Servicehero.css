@@ -1,0 +1,318 @@
+/* 
+  Premium Styles for the Services Hero Banner
+  File: /src/Components/Servicehero/Servicehero.css
+*/
+
+.services-hero {
+  position: relative;
+  width: 92%;
+  height: 50vh; /* Half of the viewport height */
+  min-height: 500px; /* A healthy minimum height for smaller viewports */
+  background-color: #050a18; /* Deep dark navy background to prevent white flashes */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align content to the right to match the background image focus */
+  padding-right: 8%; /* Add some space on the right */
+  overflow: hidden; /* Clips the scaled background image and glowing orbs */
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Background Wrapper and Image */
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  animation: kenburns-effect 24s ease-in-out infinite alternate;
+  will-change: transform;
+  filter: brightness(0.8) contrast(1.05); /* Slight darkening for maximum text contrast */
+}
+
+/* Sophisticated Multi-Stage Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  /* Dark overlay on the left to cover hands, rich glowing dark blue overlay on the right to frame text */
+  background: radial-gradient(circle at 75% 50%, rgba(11, 46, 122, 0.35) 0%, rgba(5, 10, 24, 0.8) 100%),
+              linear-gradient(to right, rgba(5, 10, 24, 0.85) 0%, rgba(5, 10, 24, 0.4) 50%, rgba(5, 10, 24, 0.85) 100%);
+}
+
+/* Premium Subtle Glowing Accent Orb */
+.hero-glow-orb {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(26, 68, 165, 0.3) 0%, rgba(11, 46, 122, 0) 70%);
+  top: 10%;
+  right: 10%;
+  filter: blur(50px);
+  z-index: 2;
+  pointer-events: none;
+  animation: orb-pulse 10s ease-in-out infinite alternate;
+}
+
+/* Main Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+/* Modern Capsule Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #a3c2ff;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: pulse-dot 1.5s infinite alternate;
+}
+
+/* Main Heading styling with premium text gradient */
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 60%, #cbdcfc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  animation: fadeInUp 0.8s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Subheading description */
+.hero-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Interactive Scroll Down Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  pointer-events: none;
+  animation: fadeIn 1s 0.6s both;
+}
+
+.scroll-icon-mouse {
+  position: relative;
+  width: 18px;
+  height: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.scroll-wheel {
+  position: absolute;
+  top: 5px;
+  width: 3px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  animation: scroll-wheel-dot 1.6s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+
+/* Ken Burns slow continuous zoom & shift */
+@keyframes kenburns-effect {
+  0% {
+    transform: scale(1.06) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.15) translate(-1.5%, 0.8%);
+  }
+  100% {
+    transform: scale(1.06) translate(0, 0);
+  }
+}
+
+/* Blinking badge dot */
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+    box-shadow: 0 0 4px rgba(56, 189, 248, 0.5);
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 1);
+  }
+}
+
+/* Subtle glowing light-orb breathing animation */
+@keyframes orb-pulse {
+  0% {
+    transform: scale(0.9) translate(0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1) translate(5%, -2%);
+    opacity: 1;
+  }
+}
+
+/* Upward entrance transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mouse wheel scroll loop */
+@keyframes scroll-wheel-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .services-hero {
+    height: 55vh;
+    padding: 0 6%;
+  }
+  
+  .hero-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    height: 50vh;
+    justify-content: center; /* Center text on tablet and mobile */
+    padding: 0 4%;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 480px;
+  }
+
+  .hero-glow-orb {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    right: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    height: 48vh;
+    min-height: 400px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1rem;
+    padding: 5px 12px;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 1.5rem;
+  }
+}

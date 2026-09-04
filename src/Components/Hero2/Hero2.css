@@ -1,0 +1,88 @@
+.hero2-section {
+    padding: 4rem 2rem;
+    background-color: #ecf2fe; /* Soft light blue background matching the screenshot */
+}
+
+.hero2-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "top top"
+        "left right";
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.hero2-section .top {
+    grid-area: top;
+    margin-bottom: 2rem;
+}
+
+.hero2-section .top p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4a5568; /* gray-600 */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero2-section .left,
+.hero2-section .right {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 20px; /* Modern premium rounded cards */
+    box-shadow: 0 10px 30px rgba(11, 46, 122, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero2-section .left {
+    grid-area: left;
+}
+
+.hero2-section .right {
+    grid-area: right;
+}
+
+.hero2-section .left:hover,
+.hero2-section .right:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(11, 46, 122, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.hero2-section img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: contain; /* Keep the icon's original shape with no cropping */
+    padding: 1.25rem; /* Generous padding around the icon to ensure proper visibility */
+    margin: 0 auto 1.5rem auto;
+    background: linear-gradient(135deg, #0b2e7a 0%, #1a44a5 100%); /* Deep, premium royal blue gradient */
+    border-radius: 26px; /* Smooth rounded squircle corners matching your screenshots */
+    box-shadow: 0 8px 20px rgba(11, 46, 122, 0.18);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero2-section .left:hover img,
+.hero2-section .right:hover img {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 12px 28px rgba(11, 46, 122, 0.3);
+}
+
+.hero2-section h2 {
+    font-size: 1.75rem;
+    color: #1a202c; /* gray-800 */
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero2-section .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "top"
+            "left"
+            "right";
+    }
+}

@@ -1,0 +1,134 @@
+.site-footer {
+    background-color: #eef2ff; /* A very light, cool indigo background */
+    color: #374151; /* A darker, cool gray for text */
+    padding: 2rem 2rem 0; /* Reduced top padding to move the section up */
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.site-footer h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a; /* A deep, professional blue for headings */
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Underline effect for headings */
+.site-footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #3b82f6; /* A brighter blue for the accent line */
+}
+
+.footer-about p {
+    line-height: 1.7;
+    color: #4b5563; /* Keep this for good readability */
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li,
+.footer-contact ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #1d4ed8; /* A darker blue on hover */
+    padding-left: 5px;
+}
+
+.footer-contact ul li {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 1rem;
+}
+
+.footer-contact img {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px; /* Align icon with first line of text */
+    /* Using a filter to color the icons to a deep blue, matching the headings. Assumes original icon is black. */
+    filter: invert(17%) sepia(69%) saturate(2818%) hue-rotate(212deg) brightness(93%) contrast(94%);
+    opacity: 0.9;
+}
+
+.footer-contact span {
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    background-color: #dbeafe; /* A slightly darker, but still light, blue */
+    border-top: 1px solid #bfdbfe;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #1e40af; /* A readable, medium-dark blue */
+}
+
+/* Premium Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-container {
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+    .site-footer {
+        padding: 2.5rem 2rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-about {
+        grid-column: span 2;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer-about {
+        grid-column: span 1;
+    }
+    
+    .site-footer {
+        padding: 2rem 1.25rem 0;
+    }
+    
+    .site-footer h3 {
+        margin-bottom: 1rem;
+    }
+}
