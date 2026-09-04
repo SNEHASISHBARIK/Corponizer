@@ -1,16 +1,212 @@
-# React + Vite
+# Corponizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern corporate and recruitment website built using React and Vite.
 
-Currently, two official plugins are available:
+## 🚀 About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Corponizer is a responsive web application designed to provide corporate services, recruitment solutions, career opportunities, and customer support through a modern and user-friendly interface.
 
-## React Compiler
+The website includes multiple pages such as:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Home
+* Services
+* Recruitment
+* Career
+* Contact
+* FAQ
+* Privacy Policy
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+
+* React.js
+* Vite
+* React Router DOM
+* Framer Motion
+* Lucide React
+* CSS
+
+---
+
+## 📂 Project Structure
+
+```text
+Corponizer/
+│
+├── public/
+├── src/
+│   ├── Components/
+│   ├── Pages/
+│   │   ├── Home.jsx
+│   │   ├── Services.jsx
+│   │   ├── Recruitment.jsx
+│   │   ├── Career.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Faq.jsx
+│   │   └── Privacy.jsx
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SNEHASISHBARIK/Corponizer.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd Corponizer
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 📸 Website Screenshots
+
+### 🏠 Home Page
+
+<!-- Add Home Page Screenshot Here -->
+
+![Home Page Screenshot](./screenshots/home.png)
+
+<br><br>
+
+### 💼 Services Page
+
+<!-- Add Services Page Screenshot Here -->
+
+![Services Page Screenshot](./screenshots/services.png)
+
+<br><br>
+
+### 👥 Recruitment Page
+
+<!-- Add Recruitment Page Screenshot Here -->
+
+![Recruitment Page Screenshot](./screenshots/recruitment.png)
+
+<br><br>
+
+### 🎯 Career Page
+
+<!-- Add Career Page Screenshot Here -->
+
+![Career Page Screenshot](./screenshots/career.png)
+
+<br><br>
+
+### 📞 Contact Page
+
+<!-- Add Contact Page Screenshot Here -->
+
+![Contact Page Screenshot](./screenshots/contact.png)
+
+<br><br>
+
+### ❓ FAQ Page
+
+<!-- Add FAQ Page Screenshot Here -->
+
+![FAQ Page Screenshot](./screenshots/faq.png)
+
+---
+
+## 📸 How to Add Screenshots
+
+Create a folder named:
+
+```text
+screenshots
+```
+
+inside your project:
+
+```text
+Corponizer/
+│
+├── screenshots/
+│   ├── home.png
+│   ├── services.png
+│   ├── recruitment.png
+│   ├── career.png
+│   ├── contact.png
+│   └── faq.png
+```
+
+Then add your website screenshots to this folder.
+
+---
+
+## 📦 Build for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Commit your changes.
+5. Push the branch.
+6. Create a Pull Request.
+
+---
+
+## 👨‍💻 Author
+
+**Snehasish Barik**
+
+GitHub: https://github.com/SNEHASISHBARIK
+
+---
+
+## 📄 License
+
+This project is created for educational and professional purposes.
+
+---
+
+⭐ If you like this project, please consider giving it a star!
